@@ -1,0 +1,16 @@
+{
+  "annotations": {
+    "changelogDate": "20240423154814"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "url",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Video",
+  "relationships": [],
+  "searchEngine": "no"
+}

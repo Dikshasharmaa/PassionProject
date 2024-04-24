@@ -1,0 +1,41 @@
+
+entity User {
+    username String required,
+    email String required,
+    profilePicture Blob,
+    languagePreference String
+}
+
+entity Recipe {
+    title String required,
+    description String,
+    cuisine String,
+    difficultyLevel String, 
+    preparationTime Integer,
+    cookingTime Integer
+}
+
+entity Ingredient {
+    name String required,
+    quantity String required,
+    unit String required
+}
+
+entity Instruction {
+    stepNumber Integer required,
+    description String required 
+}
+
+entity Video {
+    url String required
+}
+
+relationship OneToOne {
+    Recipe{author} to User
+}
+
+relationship OneToMany {
+    Recipe{ingredient} to Ingredient,
+    Recipe{instruction} to Instruction,
+    Recipe{video} to Video 
+}

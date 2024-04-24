@@ -1,0 +1,21 @@
+{
+  "annotations": {
+    "changelogDate": "20240423154813"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "stepNumber",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Instruction",
+  "relationships": [],
+  "searchEngine": "no"
+}

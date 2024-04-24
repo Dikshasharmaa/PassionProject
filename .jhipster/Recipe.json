@@ -1,0 +1,61 @@
+{
+  "annotations": {
+    "changelogDate": "20240423154811"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cuisine",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "difficultyLevel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "preparationTime",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "cookingTime",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Recipe",
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "relationshipName": "author",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "ingredient",
+      "relationshipName": "ingredient",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "instruction",
+      "relationshipName": "instruction",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "video",
+      "relationshipName": "video",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}
