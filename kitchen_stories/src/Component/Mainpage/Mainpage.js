@@ -3,12 +3,16 @@ import './Mainpage.css';
 
 
 const Mainpage = () => {
+  const myFun = async () => {
+    const data = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
+    console.log(data);
+  }
   return (
     <>
     <div className = 'container' >
         <div className='searchBar'>
             <input type='text' placeholder='What do yo want to eat today!'/>
-            <button>Search</button>
+            <button onClick={myFun}>Search</button>
         </div>
     </div>
     </>
