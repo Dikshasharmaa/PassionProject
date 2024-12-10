@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Mainpage.css';
 
 
 const Mainpage = () => {
+  const [data, setData] = useState();
   const myFun = async () => {
-    const data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=cake`);
-    console.log(data);
+    const info = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=cake`);
+    const jsonData = await info.json()
+    console.log(jsonData.meals);
+    setData(jsonData.meals)
   }
+  console.log(data);
   return (
     <>
     <div className = 'container' >
