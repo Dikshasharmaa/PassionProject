@@ -1,8 +1,22 @@
-import React from 'react'
+import { map } from 'lodash';
+import React from 'react';
+import './MealCard.css';
 
-const MealCard = () => {
+const MealCard = ({detail}) => {
+    console.log(detail);
   return (
-    <div>MealCard</div>
+    <div className='meals'>
+        {!detail ? "" : detail.map((curItem) =>{
+            return(
+                <div> 
+                    <img src ={curItem.strMealThumb}></img>
+                    <h2>{curItem.strMeal}</h2>
+                    <button>Recipe</button>
+                </div>
+
+            )
+        })}
+        </div>
   )
 }
 

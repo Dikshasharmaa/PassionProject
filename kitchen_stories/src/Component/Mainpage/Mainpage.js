@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Mainpage.css';
+import MealCard from '../MealCard/MealCard';
 
 
 const Mainpage = () => {
@@ -13,16 +14,19 @@ const Mainpage = () => {
   const myFun = async () => {
     const info = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`);
     const jsonData = await info.json()
-    console.log(jsonData.meals);
+    // console.log(jsonData.meals);
     setData(jsonData.meals)
   }
-  console.log(data);
+  // console.log(data);
   return (
     <>
     <div className = 'container' >
         <div className='searchBar'>
-            <input type='text' placeholder='What do yo want to eat today!' onChange={searhValue}/>
+            <input type='text' placeholder='What do yo want to eat today!' onChange={searchValue}/>
             <button onClick={myFun}>Search</button>
+        </div>
+        <div>
+          <MealCard detail ={data}/>
         </div>
     </div>
     </>
