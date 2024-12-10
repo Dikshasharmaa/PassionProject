@@ -4,7 +4,7 @@ import './Mainpage.css';
 
 const Mainpage = () => {
   const myFun = async () => {
-    const data = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
+    const data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=cake`);
     console.log(data);
   }
   return (
