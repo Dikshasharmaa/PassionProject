@@ -1,6 +1,7 @@
 import { map } from 'lodash';
 import React from 'react';
 import './MealCard.css';
+import { NavLink } from 'react-router-dom';
 
 const MealCard = ({detail}) => {
     console.log(detail);
@@ -11,7 +12,10 @@ const MealCard = ({detail}) => {
                 <div className='mealImg'> 
                     <img src ={curItem.strMealThumb}></img>
                     <h2>{curItem.strMeal}</h2>
+                    <NavLink to={`/${curItem.idMeal}`}>
                     <button>Recipe</button>
+                    </NavLink>
+                    
                 </div>
 
             )
