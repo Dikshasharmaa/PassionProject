@@ -1,6 +1,5 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import { json } from 'stream/consumers';
 
 const Mealinfo = () => {
     const {mealid} = useParams();
