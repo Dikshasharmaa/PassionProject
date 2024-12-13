@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import './Mealinfo.css';
 
 const Mealinfo = () => {
   const { mealid } = useParams(); // get mealid from URL
@@ -30,9 +31,9 @@ const Mealinfo = () => {
   }
 
   return (
-    <div>
+    <div className='mealInfo'>
       <img src={info.strMealThumb} alt={info.strMeal} />
-      <div>
+      <div className='info'>
         <h1>Recipe Details</h1>
         <button>{info.strMeal}</button>
         <h3>Instructions</h3>
