@@ -30,12 +30,29 @@ const Mealinfo = () => {
     return <div>Loading...</div>; // This check avoids trying to display undefined data and shows a "Loading"message
   }
 
+  //Extracting ingregients and it's measurments
+  const ingregients =[];  //declaring an array of ingredients
+  for(let i =1; i<=20; i++){
+    const ingredient = info[`strIngredient${i}`];
+    const measure = info[`strMeasure${i}`];
+    if(ingredient && ingredient.trim()){  // checking for valid ingredient
+      ingregients.push(`${ingredient} - ${measure}`); // combining ingredient and it's measure
+      
+    } 
+  }
+
+
   return (
     <div className='mealInfo'>
       <img src={info.strMealThumb} alt={info.strMeal} />
       <div className='info'>
         <h1>Recipe Details</h1>
         <button>{info.strMeal}</button>
+       <ul>
+        {ingregients.map((item, index) =>(
+          <li key={index}>{item}</li>
+        ))}
+        </ul>
         <h3>Instructions</h3>
         <p>{info.strInstructions}</p>
       </div>
