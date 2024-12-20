@@ -39,9 +39,17 @@ const Mainpage = () => {
     
   }
   const handleCategoryClick = async(category) =>{
+    setmsg(`Fetching meals in category: ${category}...`);
+    try{
     const output = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
     const jsonData = output.json();
     setData = (jsonData.meals);
+    setmsg("");
+
+  }catch(error){
+    console.log('Error fetching meals for Category:', error);
+    setmsg("Error fetching meals. Please try again");
+  }
 
   };
 
