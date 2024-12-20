@@ -4,20 +4,31 @@ import MealCard from '../MealCard/MealCard';
 
 
 
+
 const Mainpage = () => {
   const [data, setData] = useState();
   const [input, setInput] = useState("");
   const[msg, setmsg] = useState("");
   const[categories, setCatgories] = useState([]);
 
-  useEffect(() =>{
-    const fetchCategories = async ()=>{
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
-    const jsonData = await response.json();
-    setCatgories(jsonData.categories);
-  };
-  fetchCategories();
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
+        const jsonData = await response.json();
+        if (jsonData.categories) {
+          setCatgories(jsonData.categories); // Store categories
+        } else {
+          console.error('No categories found');
+        }
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
+
+    fetchCategories();
   }, []);
+
 
   const searchValue = (event) => {
     setInput(event.target.value)
