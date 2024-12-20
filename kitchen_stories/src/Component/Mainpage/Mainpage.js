@@ -38,7 +38,13 @@ const Mainpage = () => {
     }
     
   }
-  // console.log(data);
+  const handleCategoryClick = async(category) =>{
+    const output = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
+    const jsonData = output.json();
+    setData = (jsonData.meals);
+
+  };
+
   return (
     <>
     <div className = 'container' >
