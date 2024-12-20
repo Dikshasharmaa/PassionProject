@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react'
 import './Mainpage.css';
 import MealCard from '../MealCard/MealCard';
 
-
-
-
 const Mainpage = () => {
   const [data, setData] = useState();
   const [input, setInput] = useState("");
