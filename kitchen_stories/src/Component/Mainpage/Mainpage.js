@@ -69,6 +69,7 @@ const Mainpage = () => {
             <button onClick={myFun}>Search</button>
         </div>
         <h4 className='msg'>{msg}</h4>
+        <div className='categoriesSection'><h2 className='categoriesHeading'>Categories</h2>
         <div className='categoriesList'>
           {categories.map((category) =>(
           <div key={category.idCategory} className='categoryCard' onClick={()=>handleCategoryClick(category.strCategory)}>
@@ -76,6 +77,7 @@ const Mainpage = () => {
             <h4>{category.strCategory}</h4>
           </div>
         ))}
+        </div>
 
         </div>
         <div>

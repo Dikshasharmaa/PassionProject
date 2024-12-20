@@ -26,13 +26,26 @@
   .msg{
     text-align: center;
   }
-  /* Container for the categories list */
+  .categoriesSection {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+
+  .categoriesHeading {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px; 
+  }
+
 .categoriesList {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px;
+  padding: 0 20px;
 }
 
 
